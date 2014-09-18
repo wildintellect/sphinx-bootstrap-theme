@@ -85,9 +85,16 @@
       $(".globaltoc-container").remove();
     }
 
-    // Local TOC.
-    $(".bs-sidenav ul").addClass("nav nav-list");
-    $(".bs-sidenav > ul > li > a").addClass("nav-header");
+    // Sidebar
+    var $sidenav = $(".bs-sidenav");
+    // Move li's into `ul`
+    $("<ul />")
+      .prependTo($sidenav)
+      .append($sidenav.find("> li").detach());
+
+    // Style sidebar.
+    $sidenav.find("ul").addClass("nav nav-list");
+    $sidenav.find("> ul > li > a").addClass("nav-header");
 
     {% if theme_navbar_fixed_top|tobool and theme_bootstrap_version == "3" %}
     // back to top
