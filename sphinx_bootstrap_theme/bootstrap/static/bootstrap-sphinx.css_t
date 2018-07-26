@@ -30,6 +30,9 @@
     @import url("{{ './bootstrap-' + bootstrap_version + '/css/bootstrap-' + bootstrap_additional_css + '.min.css' }}");
 {% endif %}
 
+/* Custom CSS */
+@import url("css/custom.css");
+
 /*
  * Styles
  */
