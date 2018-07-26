@@ -30,7 +30,7 @@ Examples of the theme in use for some public projects:
   ``'bootswatch_theme': "sandstone"`` to use the "Sandstone_" Bootswatch_ theme.
 * `Django Cloud Browser`_: A Django reusable app for browsing cloud
   datastores (e.g., Amazon Web Services S3).
-* `C++ Format`_: Small, safe and fast formatting library for C++.
+* `seaborn`_: A statistical data visualization library.
 
 The theme demo website also includes an `examples page`_ for some useful
 illustrations of getting Sphinx to play nicely with Bootstrap (also take a
@@ -42,9 +42,9 @@ look at the `examples source`_ for the underlying reStructuredText).
 .. _Sandstone: http://bootswatch.com/sandstone
 .. _Sphinx Bootstrap Theme: http://ryan-roemer.github.com/sphinx-bootstrap-theme
 .. _examples page: http://ryan-roemer.github.com/sphinx-bootstrap-theme/examples.html
-.. _examples source: http://ryan-roemer.github.com/sphinx-bootstrap-theme/_sources/examples.txt
+.. _examples source: http://ryan-roemer.github.com/sphinx-bootstrap-theme/_sources/examples.rst.txt
 .. _Django Cloud Browser: http://ryan-roemer.github.com/django-cloud-browser
-.. _C++ Format: http://cppformat.readthedocs.org
+.. _seaborn: http://seaborn.pydata.org
 
 
 Installation
@@ -69,7 +69,7 @@ Installation from PyPI_ is fairly straightforward:
 
 Customization
 =============
-The can be customized in varying ways (some a little more work than others).
+The theme can be customized in varying ways (some a little more work than others).
 
 Theme Options
 -------------
@@ -138,7 +138,14 @@ your "conf.py" file::
         # Bootswatch (http://bootswatch.com/) theme.
         #
         # Options are nothing (default) or the name of a valid theme
-        # such as "amelia" or "cosmo".
+        # such as "cosmo" or "sandstone".
+        #
+        # The set of valid themes depend on the version of Bootstrap
+        # that's used (the next config option).
+        #
+        # Currently, the supported themes are:
+        # - Bootstrap 2: https://bootswatch.com/2
+        # - Bootstrap 3: https://bootswatch.com/3
         'bootswatch_theme': "united",
 
         # Choose Bootstrap version.
@@ -153,7 +160,7 @@ both contain version strings, which the navigation bar treats differently.
 
 Bootstrap Versions
 ------------------
-The theme supports Bootstrap ``v2.3.2`` and ``v3.3.4`` via the
+The theme supports Bootstrap ``v2.3.2`` and ``v3.3.7`` via the
 ``bootstrap_version`` theme option (of ``"2"`` or ``"3"``). Some notes
 regarding version differences:
 
@@ -161,6 +168,8 @@ regarding version differences:
   theme, they will not show up in site or page menus.
 * Internally, "navbar.html" is the Sphinx template used for Bootstrap v3 and
   "navbar-2.html" is the template used for v2.
+* If you are unsure what to choose, choose Bootstrap **3**.  If you experience some
+  form of compatibility issues, then try and use Bootstrap 2.
 
 .. _`sub-menus`: http://stackoverflow.com/questions/18023493
 
@@ -204,26 +213,50 @@ file to override a style, which in the demo would be something like::
     $ mkdir source/_static
     $ touch source/_static/my-styles.css
 
+In the new file "source/_static/my-styles.css", add any appropriate styling,
+e.g. a bold background color::
+
+    footer {
+      background-color: red;
+    }
+
 Then, in "conf.py", edit this line::
 
     html_static_path = ["_static"]
 
-You will also need the override template "source/_templates/layout.html" file
+From there it depends on which version of Sphinx you are using:
+
+**Sphinx <= 1.5**
+
+You will need the override template "source/_templates/layout.html" file
 configured as above, but with the following code::
 
     {# Import the theme's layout. #}
     {% extends "!layout.html" %}
 
     {# Custom CSS overrides #}
-    {% set bootswatch_css_custom = ['_static/my-styles.css'] %}
+    {% set css_files = css_files + ['_static/my-styles.css'] %}
 
-Then, in the new file "source/_static/my-styles.css", add any appropriate
-styling, e.g. a bold background color::
+.. note::
 
-    footer {
-      background-color: red;
-    }
+   See `Issue #159 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/159>`_
+   for more information.
 
+**Sphinx >= 1.6.1**
+
+Add a ``setup`` function in "conf.py" with stylesheet paths added relative to the
+static path::
+
+    def setup(app):
+        app.add_stylesheet("my-styles.css") # also can be a full URL
+        # app.add_stylesheet("ANOTHER.css")
+        # app.add_stylesheet("AND_ANOTHER.css")
+
+.. tip::
+
+   Sphinx automatically calls your ``setup`` function defined in "conf.py" during
+   the build process for you.  There is no need to, nor should you, call this
+   function directly in your code.
 
 Theme Notes
 ===========

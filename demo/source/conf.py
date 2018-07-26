@@ -33,7 +33,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Demo'
-copyright = u'2011-2015, Ryan Roemer'
+copyright = u'2011-2016, Ryan Roemer'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -140,7 +140,7 @@ html_theme_options = {
     # Bootswatch (http://bootswatch.com/) theme.
     #
     # Options are nothing (default) or the name of a valid theme such
-    # as "amelia" or "cosmo".
+    # such as "cosmo" or "sandstone".
     #
     # Example themes:
     # * flatly
@@ -225,6 +225,9 @@ html_sidebars = {'sidebar': ['localtoc.html', 'sourcelink.html', 'searchbox.html
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'MyProjectDoc'
 
+# # Custom style overrides
+# def setup(app):
+#     app.add_stylesheet('my-styles.css')  # may also be an URL
 
 # -- Options for LaTeX output --------------------------------------------------
 

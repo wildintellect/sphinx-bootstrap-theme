@@ -2,6 +2,95 @@
  History
 =========
 
+======
+v0.6.5
+======
+* Fix ``html_sidebars`` in ``Sphinx>=1.7.0``. (`@svenevs`_)
+  `#179 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/issues/179>`_.
+
+======
+v0.6.4
+======
+* Fix ``setup()`` function. (`@karelv`_)
+  `#176 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/176>`_.
+
+v0.6.3
+======
+* Declare supported Python versions. (`@troeger`_)
+  `#175 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/175>`_.
+
+v0.6.2
+======
+* Add theme ``setup()`` function. (`@karelv`_)
+  `#172 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/172>`_.
+
+v0.6.1
+======
+* Fix headerlink margin. (`@timhoffm`_)
+  `#170 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/170>`_.
+
+v0.6.0
+======
+* Upgrade to Bootstrap / Bootswatch v3.3.7. (`@svenevs`_)
+  `#164 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/164>`_.
+
+v0.5.3
+======
+* Fix sidebar jQuery issue with height. (`@Sheile`_)
+  `#157 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/157>`_.
+
+v0.5.2
+======
+*bad release*
+
+v0.5.1
+======
+* Fix ``@import url()`` CSS imports to be relative paths so that you can have a
+  non-root / nested site.
+
+v0.5.0
+======
+* Fix ``css_files`` breakage from Sphinx ``1.6+`` update.
+  `#158 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/158>`_,
+  `#160 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/160>`_.
+
+* **Breaking Change**: Remove ``bootswatch_css_custom`` override, and instead opt for documenting idiomatic Sphinx-version specific generic overrides for custom CSS.
+
+v0.4.14
+=======
+* Fix visibiliy of multiple footnote references. (`@drewhutchison`_)
+  `#152 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/152>`_.
+
+v0.4.13
+=======
+* Fix search with larger sidebar. (`@cemsbr`_)
+  `#148 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/148>`_.
+
+v0.4.12
+=======
+* Fix typo in theme CSS rule. (`@vkoby`_)
+  `#144 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/144>`_.
+
+v0.4.11
+=======
+* Fix logo sizing issue on mobile with RTD.
+  `#142 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/142>`_.
+
+
+v0.4.10
+=======
+* Fix logo / brand title wrapping bug. (`@miketheman`_)
+  `#141 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/141>`_.
+
+v0.4.9
+======
+* Update to Bootstrap v3.3.6 and Bootswatch v3.3.6+1. (`@ppyv`_)
+
+v0.4.8
+======
+* Fix sidenav overflow / scrolling.
+  `#136 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/136>`_.
+
 v0.4.7
 ======
 * Fix jumpy sidenav
@@ -229,27 +318,37 @@ v0.0.1
 .. _@aababilov: https://github.com/aababilov
 .. _@adamcharnock: https://github.com/adamcharnock
 .. _@cdbennett: https://github.com/cdbennett
+.. _@cemsbr: https://github.com/cemsbr
 .. _@cslarsen: https://github.com/cslarsen
 .. _@Danack: https://github.com/Danack
+.. _@drewhutchison: https://github.com/drewhutchison
 .. _@EricFromCanada: https://github.com/EricFromCanada
 .. _@fjfeijoo: https://github.com/fjfeijoo
 .. _@gkthiruvathukal: https://github.com/gkthiruvathukal
 .. _@grncdr: https://github.com/grncdr
 .. _@inducer: https://github.com/inducer
+.. _@karelv: https://github.com/karelv
 .. _@kaycebasques: https://github.com/kaycebasques
 .. _@kosiakk: https://github.com/kosiakk
 .. _@masklinn: https://github.com/masklinn
 .. _@mdboom: https://github.com/mdboom
 .. _@MiCHiLU: https://github.com/MiCHiLU
+.. _@miketheman: https://github.com/miketheman
 .. _@mrmsl: https://github.com/mrmsl
 .. _@nail: https://github.com/nail
 .. _@newgene: https://github.com/newgene
 .. _@oscarcp: https://github.com/oscarcp
 .. _@peteut: https://github.com/peteut
+.. _@ppyv: https://github.com/ppyv
 .. _@russell: https://github.com/russell
 .. _@sccolbert: https://github.com/sccolbert
+.. _@Sheile: https://github.com/Sheile
 .. _@shiumachi: https://github.com/shiumachi
+.. _@svenevs: https://github.com/svenevs
 .. _@thedrow: https://github.com/thedrow
+.. _@timhoffm: https://github.com/timhoffm
 .. _@torbjoernk: https://github.com/torbjoernk
 .. _@tristanlins: https://github.com/tristanlins
+.. _@troeger: https://github.com/troeger
+.. _@vkoby: https://github.com/vkoby
 .. _@zyga: https://github.com/zyga
